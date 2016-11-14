@@ -7,6 +7,13 @@ import (
     "compress/flate"
 )
 
+func RevStrSlice(input []string) []string {
+    if len(input) == 0 {
+        return input
+    }
+    return append(RevStrSlice(input[1:]), input[0])
+}
+
 func StringInSlice(str string, slc []string) bool {
     for _, x := range(slc) {
         if x == str {
